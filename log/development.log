@@ -1,0 +1,2131 @@
+Started GET "/" for ::1 at 2020-01-09 17:24:58 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/debian/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (1.5ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 1122ms (Views: 1074.8ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/emotions/7" for ::1 at 2020-01-09 17:27:50 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEmotion Load (0.3ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  Rendered emotions/show.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 232ms (Views: 216.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/emotions/7" for ::1 at 2020-01-09 17:41:26 +0100
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/debian/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateArtTypes (20200109164103)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (38.2ms)[0m  [1m[35mCREATE TABLE "art_types" ("id" bigserial primary key, "title" character varying, "date" character varying, "author" character varying, "interpreter" character varying, "dimention" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200109164103_create_art_types.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200109164103"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/emotions/7" for ::1 at 2020-01-09 17:41:45 +0100
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/debian/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  Rendered emotions/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4424ms (Views: 4406.7ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-09 17:41:52 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (7.1ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 195ms (Views: 186.7ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-09 17:43:34 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (3.1ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 171ms (Views: 167.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-09 17:43:37 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.3ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  Rendered emotions/show.html.erb within layouts/application (16.2ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    26:   </thead>
+    27: 
+    28:   <tbody>
+    29:     <% @art_types.each do |art_type| %>
+    30:       <tr>
+    31:         <td><%= art_type.title %></td>
+    32:         <td><%= art_type.date %></td>
+  
+app/views/emotions/show.html.erb:29:in `_app_views_emotions_show_html_erb__287292176468624115_70303169925060'
+Started GET "/emotions/6" for ::1 at 2020-01-09 17:47:25 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  Rendered emotions/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 146ms (Views: 144.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-09 17:47:28 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (5.9ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 155ms (Views: 148.0ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-09 17:47:30 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  Rendered emotions/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 160ms (Views: 157.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-09 17:47:32 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (5.0ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 259ms (Views: 253.7ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/emotions/7" for ::1 at 2020-01-09 17:47:35 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  Rendered emotions/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 179ms (Views: 176.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-09 17:47:37 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (5.4ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 159ms (Views: 153.1ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-09 17:49:58 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  Rendered emotions/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 137ms (Views: 135.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/art_type" for ::1 at 2020-01-09 17:50:10 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/art_type"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/arts" for ::1 at 2020-01-09 17:50:19 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/arts"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/art_types" for ::1 at 2020-01-09 17:50:33 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (0.4ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:18
+  Rendered art_types/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 178ms (Views: 167.1ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/art_types/new" for ::1 at 2020-01-09 17:50:35 +0100
+Processing by ArtTypesController#new as HTML
+  Rendering art_types/new.html.erb within layouts/application
+  Rendered art_types/_form.html.erb (8.9ms)
+  Rendered art_types/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 166ms (Views: 135.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-09 17:51:16 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (6.1ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 135ms (Views: 128.1ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/" for ::1 at 2020-01-10 13:56:49 +0100
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/debian/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (1.7ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 1707ms (Views: 1661.4ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-10 13:59:24 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.3ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  Rendered emotions/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 151ms (Views: 104.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-10 13:59:36 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (2.1ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:18
+  Rendered art_types/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 134ms (Views: 125.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-10 14:00:40 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  Rendered emotions/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 130ms (Views: 128.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/emotions/7" for ::1 at 2020-01-10 14:00:45 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  Rendered emotions/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 137ms (Views: 101.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-10 14:00:50 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  Rendered emotions/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 130ms (Views: 127.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/emotions/7" for ::1 at 2020-01-10 14:01:44 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  Rendered emotions/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 146ms (Views: 144.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-10 14:02:00 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (2.3ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 179ms (Views: 175.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/emotions/7" for ::1 at 2020-01-10 14:02:21 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEmotion Load (0.3ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  Rendered emotions/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 136ms (Views: 134.8ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddArtTypeToEmotions (20200110130442)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (13.4ms)[0m  [1m[35mALTER TABLE "emotions" ADD "art_type" reference[0m
+  ↳ db/migrate/20200110130442_add_art_type_to_emotions.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748421818999694485)[0m
+  ↳ bin/rails:9
+Started GET "/emotions/7/edit" for ::1 at 2020-01-10 14:08:34 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/debian/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddArtTypeToEmotions (20200110130442)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "emotions" ADD "art_type" reference[0m
+  ↳ db/migrate/20200110130442_add_art_type_to_emotions.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddArtTypeToEmotions (20200110130442)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "emotions" ADD "art_type" reference[0m
+  ↳ db/migrate/20200110130442_add_art_type_to_emotions.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748421818999694485)[0m
+  ↳ bin/rails:9
+Started GET "/emotions/7/edit" for 127.0.0.1 at 2020-01-10 14:58:44 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/debian/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddArtTypeToEmotions (20200110130442)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "emotions" ADD "art_type" references[0m
+  ↳ db/migrate/20200110130442_add_art_type_to_emotions.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddArtTypeToEmotions (20200110135943)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (9.5ms)[0m  [1m[35mALTER TABLE "emotions" ADD "art_type_id" bigint[0m
+  ↳ db/migrate/20200110135943_add_art_type_to_emotions.rb:3
+  [1m[35m (26.9ms)[0m  [1m[35mCREATE  INDEX  "index_emotions_on_art_type_id" ON "emotions"  ("art_type_id")[0m
+  ↳ db/migrate/20200110135943_add_art_type_to_emotions.rb:3
+  [1m[35m (14.1ms)[0m  [1m[35mALTER TABLE "emotions" ADD CONSTRAINT "fk_rails_b8dda072c2"
+FOREIGN KEY ("art_type_id")
+  REFERENCES "art_types" ("id")
+[0m
+  ↳ db/migrate/20200110135943_add_art_type_to_emotions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200110135943"]]
+  ↳ bin/rails:9
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (14.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/emotions/7/edit" for 127.0.0.1 at 2020-01-10 14:59:59 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/debian/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by EmotionsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEmotion Load (0.4ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/edit.html.erb within layouts/application
+  Rendered emotions/_form.html.erb (266.1ms)
+  Rendered emotions/edit.html.erb within layouts/application (269.6ms)
+Completed 500 Internal Server Error in 384ms (ActiveRecord: 11.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: <%= simple_form_for @user do |f| %>
+    2:   <%= f.input :titre %>
+    3:   <%= f.input :description %>
+    4:   <%= f.association :art_type %>
+  
+app/views/emotions/_form.html.erb:1:in `_app_views_emotions__form_html_erb__2989336110784247177_69897375857880'
+app/views/emotions/edit.html.erb:3:in `_app_views_emotions_edit_html_erb___169516772328308531_69897375772480'
+Started GET "/emotions/7" for 127.0.0.1 at 2020-01-10 15:00:12 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEmotion Load (4.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  Rendered emotions/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 1480ms (Views: 1471.9ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/emotions/7" for 127.0.0.1 at 2020-01-10 15:00:58 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEmotion Load (0.3ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  Rendered emotions/show.html.erb within layouts/application (55.0ms)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `art_types' for #<Emotion:0x000055fe25408f98>
+Did you mean?  art_type_id):
+    24:   </thead>
+    25: 
+    26:   <tbody>
+    27:     <% @emotion.art_types.each do |art_type| %>
+    28:       <tr>
+    29:         <td><%= art_type.title %></td>
+    30:         <td><%= art_type.date %></td>
+  
+app/views/emotions/show.html.erb:27:in `_app_views_emotions_show_html_erb__998856684684389756_47275017575780'
+Started GET "/emotions/7" for 127.0.0.1 at 2020-01-10 15:01:36 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEmotion Load (2.7ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  Rendered emotions/show.html.erb within layouts/application (102.8ms)
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 10.5ms)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERREUR:  la colonne art_types.emotion_id n'existe pas
+LINE 1: SELECT "art_types".* FROM "art_types" WHERE "art_types"."emo...
+                                                    ^
+: SELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1):
+    24:   </thead>
+    25: 
+    26:   <tbody>
+    27:     <% @emotion.art_types.each do |art_type| %>
+    28:       <tr>
+    29:         <td><%= art_type.title %></td>
+    30:         <td><%= art_type.date %></td>
+  
+app/views/emotions/show.html.erb:27:in `_app_views_emotions_show_html_erb__998856684684389756_47275017261260'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddArtTypeToEmotions (20200110135943)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.8ms)[0m  [1m[35mALTER TABLE "emotions" DROP CONSTRAINT "fk_rails_b8dda072c2"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "emotions" DROP COLUMN "art_type_id"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (4.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200110135943"]]
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddEmotionToArtType (20200110140314)
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "art_types" ADD "emotion" refernces[0m
+  ↳ db/migrate/20200110140314_add_emotion_to_art_type.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748421818999694485)[0m
+  ↳ bin/rails:9
+Started GET "/emotions/7" for 127.0.0.1 at 2020-01-10 15:03:26 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/debian/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/emotions/7" for 127.0.0.1 at 2020-01-10 15:03:28 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/debian/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.4.1) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.4.1) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.8) lib/rack/method_override.rb:22:in `call'
+rack (2.0.8) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.8) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddEmotionToArtType (20200110140351)
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "art_types" ADD "emotion_id" bigint[0m
+  ↳ db/migrate/20200110140351_add_emotion_to_art_type.rb:3
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_art_types_on_emotion_id" ON "art_types"  ("emotion_id")[0m
+  ↳ db/migrate/20200110140351_add_emotion_to_art_type.rb:3
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "art_types" ADD CONSTRAINT "fk_rails_6695aa30ef"
+FOREIGN KEY ("emotion_id")
+  REFERENCES "emotions" ("id")
+[0m
+  ↳ db/migrate/20200110140351_add_emotion_to_art_type.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200110140351"]]
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (4.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/emotions/7" for 127.0.0.1 at 2020-01-10 15:03:59 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/debian/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEmotion Load (1.9ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 10.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::FeatureNotSupported: ERREUR:  le plan en cache ne doit pas modifier le type en résultat
+: SELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2):
+  
+app/controllers/emotions_controller.rb:67:in `set_emotion'
+Started GET "/emotions/7" for 127.0.0.1 at 2020-01-10 15:04:15 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/debian/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEmotion Load (0.3ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  [1m[36mArtType Load (0.4ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 7]]
+  ↳ app/views/emotions/show.html.erb:27
+  Rendered emotions/show.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 1534ms (Views: 1429.0ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/emotions" for 127.0.0.1 at 2020-01-10 15:04:29 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (3.0ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 432ms (Views: 427.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/emotions/6" for 127.0.0.1 at 2020-01-10 15:04:32 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (5.1ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  [1m[36mArtType Load (2.7ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 6]]
+  ↳ app/views/emotions/show.html.erb:27
+  Rendered emotions/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 289ms (Views: 273.4ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/emotions" for 127.0.0.1 at 2020-01-10 15:04:42 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (8.6ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 288ms (Views: 278.0ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/emotions/new" for 127.0.0.1 at 2020-01-10 15:04:46 +0100
+Processing by EmotionsController#new as HTML
+  Rendering emotions/new.html.erb within layouts/application
+  Rendered emotions/_form.html.erb (97.6ms)
+  Rendered emotions/new.html.erb within layouts/application (102.2ms)
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: <%= simple_form_for @user do |f| %>
+    2:   <%= f.input :titre %>
+    3:   <%= f.input :description %>
+    4:   <%= f.association :art_type %>
+  
+app/views/emotions/_form.html.erb:1:in `_app_views_emotions__form_html_erb__2383456625362368931_70143495851760'
+app/views/emotions/new.html.erb:3:in `_app_views_emotions_new_html_erb__766539240811932255_70143493466500'
+Started GET "/emotions/new" for 127.0.0.1 at 2020-01-10 15:07:19 +0100
+Processing by EmotionsController#new as HTML
+  Rendering emotions/new.html.erb within layouts/application
+  Rendered emotions/_form.html.erb (11.6ms)
+  Rendered emotions/new.html.erb within layouts/application (13.2ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: <%= simple_form_for @emotions do |f| %>
+    2:   <%= f.input :titre %>
+    3:   <%= f.input :description %>
+    4:   <%= f.association :art_type %>
+  
+app/views/emotions/_form.html.erb:1:in `_app_views_emotions__form_html_erb__2383456625362368931_70143614865940'
+app/views/emotions/new.html.erb:3:in `_app_views_emotions_new_html_erb__766539240811932255_70143614299900'
+Started GET "/emotions/new" for 127.0.0.1 at 2020-01-10 15:07:46 +0100
+Processing by EmotionsController#new as HTML
+  Rendering emotions/new.html.erb within layouts/application
+  Rendered emotions/_form.html.erb (6.8ms)
+  Rendered emotions/new.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: <%= simple_form_for @emotions do |emotions| %>
+    2:   <%= f.input :titre %>
+    3:   <%= f.input :description %>
+    4:   <%= f.association :art_type %>
+  
+app/views/emotions/_form.html.erb:1:in `_app_views_emotions__form_html_erb__2383456625362368931_70143601712280'
+app/views/emotions/new.html.erb:3:in `_app_views_emotions_new_html_erb__766539240811932255_70143601533880'
+Started GET "/emotions/new" for 127.0.0.1 at 2020-01-10 15:07:55 +0100
+Processing by EmotionsController#new as HTML
+  Rendering emotions/new.html.erb within layouts/application
+  Rendered emotions/_form.html.erb (9.3ms)
+  Rendered emotions/new.html.erb within layouts/application (10.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: <%= simple_form_for @emotions do |emotion| %>
+    2:   <%= f.input :titre %>
+    3:   <%= f.input :description %>
+    4:   <%= f.association :art_type %>
+  
+app/views/emotions/_form.html.erb:1:in `_app_views_emotions__form_html_erb__2383456625362368931_70143496880620'
+app/views/emotions/new.html.erb:3:in `_app_views_emotions_new_html_erb__766539240811932255_70143496853840'
+Started GET "/emotions/new" for 127.0.0.1 at 2020-01-10 15:08:26 +0100
+Processing by EmotionsController#new as HTML
+  Rendering emotions/new.html.erb within layouts/application
+  Rendered emotions/_form.html.erb (2.3ms)
+  Rendered emotions/new.html.erb within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <%= simple_form_for @emotions.each do |emotion| %>
+    2:   <%= f.input :titre %>
+    3:   <%= f.input :description %>
+    4:   <%= f.association :art_type %>
+  
+app/views/emotions/_form.html.erb:1:in `_app_views_emotions__form_html_erb__2383456625362368931_70143616639140'
+app/views/emotions/new.html.erb:3:in `_app_views_emotions_new_html_erb__766539240811932255_70143616636520'
+Started GET "/emotions/new" for 127.0.0.1 at 2020-01-10 15:08:44 +0100
+Processing by EmotionsController#new as HTML
+  Rendering emotions/new.html.erb within layouts/application
+  Rendered emotions/_form.html.erb (12.7ms)
+  Rendered emotions/new.html.erb within layouts/application (15.7ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: <%= simple_form_for @emotions do |emotion| %>
+    2:   <%= f.input :titre %>
+    3:   <%= f.input :description %>
+    4:   <%= f.association :art_type %>
+  
+app/views/emotions/_form.html.erb:1:in `_app_views_emotions__form_html_erb__2383456625362368931_70143611665680'
+app/views/emotions/new.html.erb:3:in `_app_views_emotions_new_html_erb__766539240811932255_70143611646920'
+Started GET "/emotions/new" for 127.0.0.1 at 2020-01-10 15:09:06 +0100
+Processing by EmotionsController#new as HTML
+  Rendering emotions/new.html.erb within layouts/application
+  Rendered emotions/_form.html.erb (7.6ms)
+  Rendered emotions/new.html.erb within layouts/application (11.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: <%= simple_form_for @emotions do |f| %>
+    2:   <%= f.input :titre %>
+    3:   <%= f.input :description %>
+    4:   <%= f.association :art_type %>
+  
+app/views/emotions/_form.html.erb:1:in `_app_views_emotions__form_html_erb__2383456625362368931_70143498418740'
+app/views/emotions/new.html.erb:3:in `_app_views_emotions_new_html_erb__766539240811932255_70143498375360'
+Started GET "/emotions/new" for 127.0.0.1 at 2020-01-10 15:09:25 +0100
+Processing by EmotionsController#new as HTML
+  Rendering emotions/new.html.erb within layouts/application
+  Rendered emotions/_form.html.erb (39.1ms)
+  Rendered emotions/new.html.erb within layouts/application (41.0ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Association :art_type not found):
+    1: <%= simple_form_for @emotion do |f| %>
+    2:   <%= f.input :titre %>
+    3:   <%= f.input :description %>
+    4:   <%= f.association :art_type %>
+    5:   <%= f.button :submit %>
+    6: <% end %>
+  
+app/views/emotions/_form.html.erb:4:in `block in _app_views_emotions__form_html_erb__2383456625362368931_70143496148420'
+app/views/emotions/_form.html.erb:1:in `_app_views_emotions__form_html_erb__2383456625362368931_70143496148420'
+app/views/emotions/new.html.erb:3:in `_app_views_emotions_new_html_erb__766539240811932255_70143496129280'
+Started GET "/" for ::1 at 2020-01-10 15:10:07 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (1.3ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 160ms (Views: 157.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/emotions/6/edit" for ::1 at 2020-01-10 15:10:14 +0100
+Processing by EmotionsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/edit.html.erb within layouts/application
+  [1m[36mArtType Load (9.6ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 6]]
+  ↳ app/views/emotions/_form.html.erb:4
+  [1m[36mArtType Load (6.7ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/emotions/_form.html.erb:4
+  Rendered emotions/_form.html.erb (53.1ms)
+  Rendered emotions/edit.html.erb within layouts/application (57.4ms)
+Completed 200 OK in 207ms (Views: 187.6ms | ActiveRecord: 17.6ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-10 15:10:16 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (1.5ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 134ms (Views: 131.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/emotions/6/edit" for ::1 at 2020-01-10 15:10:18 +0100
+Processing by EmotionsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/edit.html.erb within layouts/application
+  [1m[36mArtType Load (4.0ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 6]]
+  ↳ app/views/emotions/_form.html.erb:4
+  [1m[36mArtType Load (3.5ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/emotions/_form.html.erb:4
+  Rendered emotions/_form.html.erb (34.2ms)
+  Rendered emotions/edit.html.erb within layouts/application (44.5ms)
+Completed 200 OK in 164ms (Views: 155.4ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-10 15:10:24 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (6.5ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 254ms (Views: 247.1ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-10 15:10:56 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  [1m[36mArtType Load (1.4ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 6]]
+  ↳ app/views/emotions/show.html.erb:27
+  Rendered emotions/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 223ms (Views: 219.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/emotions/6/edit" for ::1 at 2020-01-10 15:11:00 +0100
+Processing by EmotionsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/edit.html.erb within layouts/application
+  [1m[36mArtType Load (0.4ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 6]]
+  ↳ app/views/emotions/_form.html.erb:4
+  [1m[36mArtType Load (0.2ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/emotions/_form.html.erb:4
+  Rendered emotions/_form.html.erb (33.6ms)
+  Rendered emotions/edit.html.erb within layouts/application (37.2ms)
+Completed 200 OK in 183ms (Views: 180.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-10 15:11:02 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (2.5ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 193ms (Views: 189.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-10 15:21:45 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (0.7ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 251ms (Views: 247.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/emotions/7" for ::1 at 2020-01-10 15:21:51 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  [1m[36mArtType Load (1.2ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 7]]
+  ↳ app/views/emotions/show.html.erb:27
+  Rendered emotions/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 172ms (Views: 168.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/emotions/7" for ::1 at 2020-01-10 15:23:04 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  [1m[36mArtType Load (5.4ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 7]]
+  ↳ app/views/emotions/show.html.erb:27
+  Rendered emotions/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 141ms (Views: 134.4ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/art_types/new" for ::1 at 2020-01-10 15:23:11 +0100
+Processing by ArtTypesController#new as HTML
+  Rendering art_types/new.html.erb within layouts/application
+  Rendered art_types/_form.html.erb (7.7ms)
+  Rendered art_types/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 172ms (Views: 124.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-10 15:24:13 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (6.3ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:18
+  Rendered art_types/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 175ms (Views: 167.9ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-10 15:24:26 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (2.4ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 127ms (Views: 124.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-10 15:24:28 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  [1m[36mArtType Load (0.1ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 6]]
+  ↳ app/views/emotions/show.html.erb:27
+  Rendered emotions/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 158ms (Views: 156.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/art_types/new" for ::1 at 2020-01-10 15:24:39 +0100
+Processing by ArtTypesController#new as HTML
+  Rendering art_types/new.html.erb within layouts/application
+  Rendered art_types/_form.html.erb (11.6ms)
+  Rendered art_types/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 154ms (Views: 153.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/art_types/new" for ::1 at 2020-01-10 15:25:09 +0100
+Processing by ArtTypesController#new as HTML
+  Rendering art_types/new.html.erb within layouts/application
+  Rendered art_types/_form.html.erb (11.2ms)
+  Rendered art_types/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 139ms (Views: 138.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/emotions/new" for ::1 at 2020-01-10 15:25:28 +0100
+Processing by EmotionsController#new as HTML
+  Rendering emotions/new.html.erb within layouts/application
+  [1m[36mArtType Load (0.6ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/emotions/_form.html.erb:4
+  Rendered emotions/_form.html.erb (22.8ms)
+  Rendered emotions/new.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 139ms (Views: 137.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-10 16:01:45 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (1.5ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 208ms (Views: 199.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/emotions/new" for ::1 at 2020-01-10 16:01:49 +0100
+Processing by EmotionsController#new as HTML
+  Rendering emotions/new.html.erb within layouts/application
+  [1m[36mArtType Load (0.5ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/emotions/_form.html.erb:4
+  Rendered emotions/_form.html.erb (83.6ms)
+  Rendered emotions/new.html.erb within layouts/application (85.7ms)
+Completed 200 OK in 362ms (Views: 360.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-10 16:01:53 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (7.4ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 257ms (Views: 248.0ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-10 16:01:56 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.3ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  [1m[36mArtType Load (1.2ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 6]]
+  ↳ app/views/emotions/show.html.erb:27
+  Rendered emotions/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 270ms (Views: 265.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2020-01-10 16:04:58 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (2.9ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 212ms (Views: 208.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-10 16:07:09 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  [1m[36mArtType Load (0.2ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 6]]
+  ↳ app/views/emotions/show.html.erb:27
+  Rendered emotions/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 172ms (Views: 167.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-10 16:07:12 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (5.1ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 133ms (Views: 127.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/emotions/new" for ::1 at 2020-01-10 16:07:14 +0100
+Processing by EmotionsController#new as HTML
+  Rendering emotions/new.html.erb within layouts/application
+  Rendered emotions/_form.html.erb (16.8ms)
+  Rendered emotions/new.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 187ms (Views: 185.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-10 16:07:16 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (6.6ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 281ms (Views: 274.0ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-10 16:07:18 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  [1m[36mArtType Load (0.4ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 6]]
+  ↳ app/views/emotions/show.html.erb:27
+  Rendered emotions/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 162ms (Views: 159.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/art_types/new" for ::1 at 2020-01-10 16:07:19 +0100
+Processing by ArtTypesController#new as HTML
+  Rendering art_types/new.html.erb within layouts/application
+  Rendered art_types/_form.html.erb (11.9ms)
+  Rendered art_types/new.html.erb within layouts/application (21.6ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: <%= simple_form_for @emotion do |f| %>
+    2:   <%= f.input :title %>
+    3:   <%= f.input :date %>
+    4:   <%= f.input :author %>
+  
+app/views/art_types/_form.html.erb:1:in `_app_views_art_types__form_html_erb__1144139561502243118_70143497215280'
+app/views/art_types/new.html.erb:3:in `_app_views_art_types_new_html_erb___4476642221364480855_70143497165400'
+Started GET "/art_types/new" for ::1 at 2020-01-10 16:07:41 +0100
+Processing by ArtTypesController#new as HTML
+  Rendering art_types/new.html.erb within layouts/application
+  Rendered art_types/_form.html.erb (3.7ms)
+  Rendered art_types/new.html.erb within layouts/application (13.6ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: <%= simple_form_for @art_types do |f| %>
+    2:   <%= f.input :title %>
+    3:   <%= f.input :date %>
+    4:   <%= f.input :author %>
+  
+app/views/art_types/_form.html.erb:1:in `_app_views_art_types__form_html_erb__1144139561502243118_70143496133640'
+app/views/art_types/new.html.erb:3:in `_app_views_art_types_new_html_erb___4476642221364480855_70143495284080'
+Started GET "/art_types/new" for ::1 at 2020-01-10 16:07:49 +0100
+Processing by ArtTypesController#new as HTML
+  Rendering art_types/new.html.erb within layouts/application
+  [1m[36mEmotion Load (0.3ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/art_types/_form.html.erb:7
+  Rendered art_types/_form.html.erb (75.5ms)
+  Rendered art_types/new.html.erb within layouts/application (76.5ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `title' for #<Emotion:0x00007f971c32e190>
+Did you mean?  titre
+               titre?
+               titre=):
+    4:   <%= f.input :author %>
+    5:   <%= f.input :interpreter %>
+    6:   <%= f.input :dimention %>
+    7:   <%= f.association :emotion %>
+    8:   <%= f.button :submit %>
+    9: 
+   10: <% end %>
+  
+app/models/emotion.rb:4:in `to_s'
+app/views/art_types/_form.html.erb:7:in `block in _app_views_art_types__form_html_erb__1144139561502243118_70143495878220'
+app/views/art_types/_form.html.erb:1:in `_app_views_art_types__form_html_erb__1144139561502243118_70143495878220'
+app/views/art_types/new.html.erb:3:in `_app_views_art_types_new_html_erb___4476642221364480855_70143493452820'
+Started GET "/art_types/new" for ::1 at 2020-01-10 16:08:19 +0100
+Processing by ArtTypesController#new as HTML
+  Rendering art_types/new.html.erb within layouts/application
+  [1m[36mEmotion Load (1.0ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/art_types/_form.html.erb:7
+  Rendered art_types/_form.html.erb (68.7ms)
+  Rendered art_types/new.html.erb within layouts/application (70.8ms)
+Completed 500 Internal Server Error in 139ms (ActiveRecord: 15.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `title' for #<Emotion:0x00007f972957e528>
+Did you mean?  titre
+               titre?
+               titre=):
+    4:   <%= f.input :author %>
+    5:   <%= f.input :interpreter %>
+    6:   <%= f.input :dimention %>
+    7:   <%= f.association :emotion %>
+    8:   <%= f.button :submit %>
+    9: 
+   10: <% end %>
+  
+app/models/emotion.rb:4:in `to_s'
+app/views/art_types/_form.html.erb:7:in `block in _app_views_art_types__form_html_erb__1144139561502243118_70143601606000'
+app/views/art_types/_form.html.erb:1:in `_app_views_art_types__form_html_erb__1144139561502243118_70143601606000'
+app/views/art_types/new.html.erb:3:in `_app_views_art_types_new_html_erb___4476642221364480855_70143601357540'
+Started GET "/art_types/new" for ::1 at 2020-01-10 16:08:38 +0100
+Processing by ArtTypesController#new as HTML
+  Rendering art_types/new.html.erb within layouts/application
+  [1m[36mEmotion Load (0.5ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/art_types/_form.html.erb:7
+  Rendered art_types/_form.html.erb (48.6ms)
+  Rendered art_types/new.html.erb within layouts/application (49.5ms)
+Completed 200 OK in 234ms (Views: 196.9ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/art_types/new" for ::1 at 2020-01-10 16:09:11 +0100
+Processing by ArtTypesController#new as HTML
+  Rendering art_types/new.html.erb within layouts/application
+  [1m[36mEmotion Load (4.6ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/art_types/_form.html.erb:7
+  Rendered art_types/_form.html.erb (45.3ms)
+  Rendered art_types/new.html.erb within layouts/application (55.7ms)
+Completed 200 OK in 227ms (Views: 191.2ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/art_types" for ::1 at 2020-01-10 16:10:33 +0100
+Processing by ArtTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W5vwnxz7R6HOveA1yek58n2IdaoWdgEsEIN3aE2fPjRcwPH+7X8McCinoJAOZ3v3wlqyhjjrU7SPPk9+f5dhpQ==", "art_type"=>{"title"=>"vénus", "date"=>"qlijfhiqe", "author"=>"qfùoejfoiqe", "interpreter"=>"", "dimention"=>"3*3", "emotion_id"=>"6"}, "commit"=>"Create Art type"}
+Unpermitted parameter: :emotion_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[35m (1.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/art_types_controller.rb:30
+  Rendering art_types/new.html.erb within layouts/application
+  [1m[36mEmotion Load (0.3ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/art_types/_form.html.erb:7
+  Rendered art_types/_form.html.erb (24.8ms)
+  Rendered art_types/new.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 184ms (Views: 168.7ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/art_types" for ::1 at 2020-01-10 16:10:38 +0100
+Processing by ArtTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A2GgYDqEVOZ/gK+T2wSkXYE2mrPYznIqfcjqEClHhkQEOqEBywAfN5ma7zYciuZYPuRdn/ZTILLiddIGG0/Z1Q==", "art_type"=>{"title"=>"vénus", "date"=>"qlijfhiqe", "author"=>"qfùoejfoiqe", "interpreter"=>"", "dimention"=>"3*3", "emotion_id"=>"6"}, "commit"=>"Create Art type"}
+Unpermitted parameter: :emotion_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/art_types_controller.rb:30
+  Rendering art_types/new.html.erb within layouts/application
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/art_types/_form.html.erb:7
+  Rendered art_types/_form.html.erb (18.2ms)
+  Rendered art_types/new.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 151ms (Views: 147.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/art_types" for ::1 at 2020-01-10 16:10:42 +0100
+Processing by ArtTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QOl+mgpkoEB0/T/BcURfH0coEJ7b3ZeKdffXGenbqvdHsn/7++DrkZLnf2S2yh0a+PrXsvVAxRLqSu8P29P1Zg==", "art_type"=>{"title"=>"vénus", "date"=>"qlijfhiqe", "author"=>"qfùoejfoiqe", "interpreter"=>"", "dimention"=>"3*3", "emotion_id"=>"7"}, "commit"=>"Create Art type"}
+Unpermitted parameter: :emotion_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[35m (1.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/art_types_controller.rb:30
+  Rendering art_types/new.html.erb within layouts/application
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/art_types/_form.html.erb:7
+  Rendered art_types/_form.html.erb (16.6ms)
+  Rendered art_types/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 201ms (Views: 197.0ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/art_types" for ::1 at 2020-01-10 16:11:48 +0100
+Processing by ArtTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3SscvH1kLdgfxDeVYsH4qi2zZByBccgyhwMPspoWBozacB3djOBmCfnedzClT7qvkmGjMK/smqoYvjekqB5ZHQ==", "art_type"=>{"title"=>"vénus", "date"=>"qlijfhiqe", "author"=>"qfùoejfoiqe", "interpreter"=>"", "dimention"=>"3*3", "emotion_id"=>"6"}, "commit"=>"Create Art type"}
+Unpermitted parameter: :emotion_id
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/art_types_controller.rb:30
+  Rendering art_types/new.html.erb within layouts/application
+  [1m[36mEmotion Load (7.6ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/art_types/_form.html.erb:7
+  Rendered art_types/_form.html.erb (29.6ms)
+  Rendered art_types/new.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 301ms (Views: 283.9ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-10 16:12:21 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (2.8ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:18
+  Rendered art_types/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 309ms (Views: 300.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/art_types/new" for ::1 at 2020-01-10 16:12:24 +0100
+Processing by ArtTypesController#new as HTML
+  Rendering art_types/new.html.erb within layouts/application
+  [1m[36mEmotion Load (2.3ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/art_types/_form.html.erb:7
+  Rendered art_types/_form.html.erb (76.3ms)
+  Rendered art_types/new.html.erb within layouts/application (78.2ms)
+Completed 200 OK in 272ms (Views: 233.9ms | ActiveRecord: 8.0ms)
+
+
+Started POST "/art_types" for ::1 at 2020-01-10 16:12:32 +0100
+Processing by ArtTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2henms/qT1MwX7x3S4FHLELWp6ZCvEWMH21KelYN7Iw8nVYjwiZMx6JDyS6gJuUOh4s6yfaBzgLz2cGWpsD4Ag==", "art_type"=>{"title"=>"", "date"=>"", "author"=>"", "interpreter"=>"", "dimention"=>"", "emotion_id"=>"6"}, "commit"=>"Create Art type"}
+Unpermitted parameter: :emotion_id
+  [1m[35m (3.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[35m (2.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/art_types_controller.rb:30
+  Rendering art_types/new.html.erb within layouts/application
+  [1m[36mEmotion Load (9.8ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/art_types/_form.html.erb:7
+  Rendered art_types/_form.html.erb (28.5ms)
+  Rendered art_types/new.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 159ms (Views: 137.6ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-10 16:13:17 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (0.2ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:18
+  Rendered art_types/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 134ms (Views: 131.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/art_types/new" for ::1 at 2020-01-10 16:13:19 +0100
+Processing by ArtTypesController#new as HTML
+  Rendering art_types/new.html.erb within layouts/application
+  [1m[36mEmotion Load (1.0ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/art_types/_form.html.erb:7
+  Rendered art_types/_form.html.erb (50.6ms)
+  Rendered art_types/new.html.erb within layouts/application (61.7ms)
+Completed 200 OK in 228ms (Views: 185.1ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/art_types" for ::1 at 2020-01-10 16:13:23 +0100
+Processing by ArtTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ob0nYlGT0i9g4FL1Nz2sxDI98IsfCLZHOPw3c7oCAYbfN9bbXF/Ru/L8J6zcmg7m92Bt5Ks1PcnUSLyfSs8VCA==", "art_type"=>{"title"=>"", "date"=>"", "author"=>"", "interpreter"=>"", "dimention"=>"", "emotion_id"=>"6"}, "commit"=>"Create Art type"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[36mEmotion Load (0.9ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[36mArtType Create (4.6ms)[0m  [1m[32mINSERT INTO "art_types" ("title", "date", "author", "interpreter", "dimention", "created_at", "updated_at", "emotion_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", ""], ["date", ""], ["author", ""], ["interpreter", ""], ["dimention", ""], ["created_at", "2020-01-10 15:13:23.646287"], ["updated_at", "2020-01-10 15:13:23.646287"], ["emotion_id", 6]]
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/art_types_controller.rb:30
+Redirected to http://localhost:3000/art_types/1
+Completed 302 Found in 16ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/art_types/1" for ::1 at 2020-01-10 16:13:23 +0100
+Processing by ArtTypesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtType Load (0.3ms)[0m  [1m[34mSELECT  "art_types".* FROM "art_types" WHERE "art_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:67
+  Rendering art_types/show.html.erb within layouts/application
+  Rendered art_types/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 158ms (Views: 149.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-10 16:13:34 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (1.7ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:18
+  Rendered art_types/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 151ms (Views: 148.5ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/art_types/1" for ::1 at 2020-01-10 16:13:57 +0100
+Processing by ArtTypesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"r0hx9P9i1ZMeoxRNM27L7Q3u+MH6h6pG68XfdJeXf/uoE3CVDuaeQvi5VOj04Inosjw/7dQa+N50eOdipZ8gag==", "id"=>"1"}
+  [1m[36mArtType Load (0.2ms)[0m  [1m[34mSELECT  "art_types".* FROM "art_types" WHERE "art_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_types_controller.rb:57
+  [1m[36mArtType Destroy (0.2ms)[0m  [1m[31mDELETE FROM "art_types" WHERE "art_types"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/art_types_controller.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/art_types_controller.rb:57
+Redirected to http://localhost:3000/art_types
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-10 16:13:57 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (3.7ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:18
+  Rendered art_types/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 158ms (Views: 153.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/art_types/new" for ::1 at 2020-01-10 16:13:59 +0100
+Processing by ArtTypesController#new as HTML
+  Rendering art_types/new.html.erb within layouts/application
+  [1m[36mEmotion Load (0.3ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/art_types/_form.html.erb:7
+  Rendered art_types/_form.html.erb (37.4ms)
+  Rendered art_types/new.html.erb within layouts/application (40.5ms)
+Completed 200 OK in 185ms (Views: 184.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/art_types" for ::1 at 2020-01-10 16:14:15 +0100
+Processing by ArtTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jWb+7ie3dym2WQgR7me5l7xvpVR25XB1gC/mlGfZ87tr7A9XKnt0vSRFfUgFwBu1eTI4O8LY+/tsm214lxTnNQ==", "art_type"=>{"title"=>"vénus", "date"=>"zeriughze", "author"=>"aergzerg", "interpreter"=>"", "dimention"=>"ezrgzergz", "emotion_id"=>"7"}, "commit"=>"Create Art type"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[36mEmotion Load (0.3ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[36mArtType Create (0.3ms)[0m  [1m[32mINSERT INTO "art_types" ("title", "date", "author", "interpreter", "dimention", "created_at", "updated_at", "emotion_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "vénus"], ["date", "zeriughze"], ["author", "aergzerg"], ["interpreter", ""], ["dimention", "ezrgzergz"], ["created_at", "2020-01-10 15:14:15.655407"], ["updated_at", "2020-01-10 15:14:15.655407"], ["emotion_id", 7]]
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/art_types_controller.rb:30
+Redirected to http://localhost:3000/art_types/2
+Completed 302 Found in 12ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/art_types/2" for ::1 at 2020-01-10 16:14:15 +0100
+Processing by ArtTypesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtType Load (0.7ms)[0m  [1m[34mSELECT  "art_types".* FROM "art_types" WHERE "art_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:67
+  Rendering art_types/show.html.erb within layouts/application
+  Rendered art_types/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 161ms (Views: 151.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-10 16:14:18 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (16.8ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:18
+  Rendered art_types/index.html.erb within layouts/application (45.4ms)
+Completed 200 OK in 1133ms (Views: 1085.7ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/art_types/2" for ::1 at 2020-01-10 16:15:34 +0100
+Processing by ArtTypesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtType Load (2.9ms)[0m  [1m[34mSELECT  "art_types".* FROM "art_types" WHERE "art_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:67
+  Rendering art_types/show.html.erb within layouts/application
+  Rendered art_types/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 266ms (Views: 256.7ms | ActiveRecord: 2.9ms)
+
+
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to Add (20200110151649)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200110151649"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (3.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/art_types/2/edit" for ::1 at 2020-01-10 16:17:32 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/debian/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ArtTypesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtType Load (0.3ms)[0m  [1m[34mSELECT  "art_types".* FROM "art_types" WHERE "art_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:67
+  Rendering art_types/edit.html.erb within layouts/application
+  Rendered art_types/_form.html.erb (38.1ms)
+  Rendered art_types/edit.html.erb within layouts/application (39.2ms)
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 5.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `link' for #<ArtType:0x00007f971c3ce1b8>):
+    4:   <%= f.input :author %>
+    5:   <%= f.input :interpreter %>
+    6:   <%= f.input :dimention %>
+    7:   <%= f.input :link %>
+    8:   <%= f.association :emotion %>
+    9:   <%= f.button :submit %>
+   10: 
+  
+app/views/art_types/_form.html.erb:7:in `block in _app_views_art_types__form_html_erb__1144139561502243118_70143496185720'
+app/views/art_types/_form.html.erb:1:in `_app_views_art_types__form_html_erb__1144139561502243118_70143496185720'
+app/views/art_types/edit.html.erb:3:in `_app_views_art_types_edit_html_erb__1509965445303827162_70143495287260'
+Started GET "/art_types/2/edit" for ::1 at 2020-01-10 16:18:13 +0100
+Processing by ArtTypesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtType Load (1.4ms)[0m  [1m[34mSELECT  "art_types".* FROM "art_types" WHERE "art_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:67
+  Rendering art_types/edit.html.erb within layouts/application
+  Rendered art_types/_form.html.erb (59.0ms)
+  Rendered art_types/edit.html.erb within layouts/application (71.8ms)
+Completed 500 Internal Server Error in 142ms (ActiveRecord: 9.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `link' for #<ArtType:0x00007f971c85de68>):
+    4:   <%= f.input :author %>
+    5:   <%= f.input :interpreter %>
+    6:   <%= f.input :dimention %>
+    7:   <%= f.input :link %>
+    8:   <%= f.association :emotion %>
+    9:   <%= f.button :submit %>
+   10: 
+  
+app/views/art_types/_form.html.erb:7:in `block in _app_views_art_types__form_html_erb__1144139561502243118_70143497722160'
+app/views/art_types/_form.html.erb:1:in `_app_views_art_types__form_html_erb__1144139561502243118_70143497722160'
+app/views/art_types/edit.html.erb:3:in `_app_views_art_types_edit_html_erb__1509965445303827162_70143497659900'
+Started GET "/art_types/2/edit" for ::1 at 2020-01-10 16:22:56 +0100
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/debian/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ArtTypesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtType Load (0.5ms)[0m  [1m[34mSELECT  "art_types".* FROM "art_types" WHERE "art_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:67
+  Rendering art_types/edit.html.erb within layouts/application
+  Rendered art_types/_form.html.erb (194.4ms)
+  Rendered art_types/edit.html.erb within layouts/application (218.1ms)
+Completed 500 Internal Server Error in 330ms (ActiveRecord: 14.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `link' for #<ArtType:0x0000557ea7f57cf8>):
+    4:   <%= f.input :author %>
+    5:   <%= f.input :interpreter %>
+    6:   <%= f.input :dimention %>
+    7:   <%= f.input :link %>
+    8:   <%= f.association :emotion %>
+    9:   <%= f.button :submit %>
+   10: 
+  
+app/views/art_types/_form.html.erb:7:in `block in _app_views_art_types__form_html_erb___222581702765416899_47001236838320'
+app/views/art_types/_form.html.erb:1:in `_app_views_art_types__form_html_erb___222581702765416899_47001236838320'
+app/views/art_types/edit.html.erb:3:in `_app_views_art_types_edit_html_erb___275885989709538101_47001232043680'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddLinkToArtType (20200110152336)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "art_types" ADD "link" character varying[0m
+  ↳ db/migrate/20200110152336_add_link_to_art_type.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200110152336"]]
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748421818999694485)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/art_types/2/edit" for ::1 at 2020-01-10 16:24:18 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/debian/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by ArtTypesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtType Load (0.4ms)[0m  [1m[34mSELECT  "art_types".* FROM "art_types" WHERE "art_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:67
+  Rendering art_types/edit.html.erb within layouts/application
+  [1m[36mEmotion Load (3.5ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/art_types/_form.html.erb:8
+  Rendered art_types/_form.html.erb (306.6ms)
+  Rendered art_types/edit.html.erb within layouts/application (314.3ms)
+Completed 200 OK in 1686ms (Views: 1570.6ms | ActiveRecord: 25.5ms)
+
+
+Started GET "/" for ::1 at 2020-01-12 11:59:01 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/debian/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (3.0ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (52.2ms)
+Completed 200 OK in 961ms (Views: 888.6ms | ActiveRecord: 16.4ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-12 11:59:06 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  [1m[36mArtType Load (1.7ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 6]]
+  ↳ app/views/emotions/show.html.erb:27
+  Rendered emotions/show.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 261ms (Views: 247.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/art_types/new" for ::1 at 2020-01-12 11:59:13 +0100
+Processing by ArtTypesController#new as HTML
+  Rendering art_types/new.html.erb within layouts/application
+  [1m[36mEmotion Load (4.8ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/art_types/_form.html.erb:8
+  Rendered art_types/_form.html.erb (86.4ms)
+  Rendered art_types/new.html.erb within layouts/application (88.5ms)
+Completed 200 OK in 242ms (Views: 195.8ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/art_types" for ::1 at 2020-01-12 12:01:13 +0100
+Processing by ArtTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wdwgbNDFHnLW5XxaNMTmk+iB3TsNbIwVBaml7fcrIaJCq/VOfWejyy9SHZhb5wCBWXISzpvh25jTzeYBOK8HZA==", "art_type"=>{"title"=>"la nuit étoilée", "date"=>"25 mai 1889", "author"=>"Vincent van Gogh", "interpreter"=>"", "dimention"=>"73 × 92 cm", "link"=>"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1024px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg", "emotion_id"=>"6"}, "commit"=>"Create Art type"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[36mEmotion Load (3.1ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[36mArtType Create (4.5ms)[0m  [1m[32mINSERT INTO "art_types" ("title", "date", "author", "interpreter", "dimention", "created_at", "updated_at", "emotion_id", "link") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "la nuit étoilée"], ["date", "25 mai 1889"], ["author", "Vincent van Gogh"], ["interpreter", ""], ["dimention", "73 × 92 cm"], ["created_at", "2020-01-12 11:01:13.095909"], ["updated_at", "2020-01-12 11:01:13.095909"], ["emotion_id", 6], ["link", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1024px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"]]
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/art_types_controller.rb:30
+Redirected to http://localhost:3000/art_types/3
+Completed 302 Found in 16ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/art_types/3" for ::1 at 2020-01-12 12:01:13 +0100
+Processing by ArtTypesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArtType Load (0.2ms)[0m  [1m[34mSELECT  "art_types".* FROM "art_types" WHERE "art_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:67
+  Rendering art_types/show.html.erb within layouts/application
+  Rendered art_types/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 157ms (Views: 151.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-12 12:01:16 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (4.7ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:18
+  Rendered art_types/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 111ms (Views: 105.1ms | ActiveRecord: 4.7ms)
+
+
+Started DELETE "/art_types/2" for ::1 at 2020-01-12 12:01:25 +0100
+Processing by ArtTypesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MheaCtqefBwtYGoqJuLbOGIrg1AN8mKV1wLc3gJQDk50o34FSzkWZvLB5nu5owVDAonY2HRQ4fEIm0Ss8xVEqA==", "id"=>"2"}
+  [1m[36mArtType Load (1.3ms)[0m  [1m[34mSELECT  "art_types".* FROM "art_types" WHERE "art_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:67
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_types_controller.rb:57
+  [1m[36mArtType Destroy (0.3ms)[0m  [1m[31mDELETE FROM "art_types" WHERE "art_types"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/art_types_controller.rb:57
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/art_types_controller.rb:57
+Redirected to http://localhost:3000/art_types
+Completed 302 Found in 10ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-12 12:01:25 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (0.4ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:18
+  Rendered art_types/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 150ms (Views: 148.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-12 12:02:28 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (2.8ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:18
+  Rendered art_types/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 116ms (Views: 111.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-12 12:03:23 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (6.0ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:18
+  Rendered art_types/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 144ms (Views: 137.3ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-12 12:04:00 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (1.7ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:19
+  Rendered art_types/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 148ms (Views: 145.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-12 12:04:25 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (3.2ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:19
+  Rendered art_types/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 133ms (Views: 129.0ms | ActiveRecord: 3.2ms)
+
+
+Started DELETE "/art_types/3" for ::1 at 2020-01-12 12:04:58 +0100
+Processing by ArtTypesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zs5s0tuNRVAJsI4ChwQV000b5iego1qJWYJWat+AFVmIeojdSiovKtYRAlMYRcuoLbm9r9kB2e2GG84YLsVfvw==", "id"=>"3"}
+  [1m[36mArtType Load (0.9ms)[0m  [1m[34mSELECT  "art_types".* FROM "art_types" WHERE "art_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_types_controller.rb:57
+  [1m[36mArtType Destroy (0.6ms)[0m  [1m[31mDELETE FROM "art_types" WHERE "art_types"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/art_types_controller.rb:57
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/art_types_controller.rb:57
+Redirected to http://localhost:3000/art_types
+Completed 302 Found in 9ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-12 12:04:58 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (3.1ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:19
+  Rendered art_types/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 111ms (Views: 106.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/art_types/3" for ::1 at 2020-01-12 12:05:14 +0100
+Processing by ArtTypesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArtType Load (0.2ms)[0m  [1m[34mSELECT  "art_types".* FROM "art_types" WHERE "art_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ArtType with 'id'=3):
+  
+app/controllers/art_types_controller.rb:67:in `set_art_type'
+Started GET "/art_types/3" for ::1 at 2020-01-12 12:05:29 +0100
+Processing by ArtTypesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArtType Load (0.3ms)[0m  [1m[34mSELECT  "art_types".* FROM "art_types" WHERE "art_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ArtType with 'id'=3):
+  
+app/controllers/art_types_controller.rb:67:in `set_art_type'
+Started GET "/" for ::1 at 2020-01-12 12:05:35 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (2.8ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 114ms (Views: 110.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-12 12:05:37 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.3ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  [1m[36mArtType Load (1.9ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 6]]
+  ↳ app/views/emotions/show.html.erb:27
+  Rendered emotions/show.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 142ms (Views: 137.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/emotions/6/edit" for ::1 at 2020-01-12 12:05:47 +0100
+Processing by EmotionsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/edit.html.erb within layouts/application
+  Rendered emotions/_form.html.erb (14.1ms)
+  Rendered emotions/edit.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 130ms (Views: 127.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-12 12:05:51 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (1.0ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 133ms (Views: 131.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-12 12:05:52 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  [1m[36mArtType Load (3.2ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 6]]
+  ↳ app/views/emotions/show.html.erb:27
+  Rendered emotions/show.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 147ms (Views: 142.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/art_types/new" for ::1 at 2020-01-12 12:05:56 +0100
+Processing by ArtTypesController#new as HTML
+  Rendering art_types/new.html.erb within layouts/application
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/art_types/_form.html.erb:8
+  Rendered art_types/_form.html.erb (51.1ms)
+  Rendered art_types/new.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 163ms (Views: 161.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/art_types" for ::1 at 2020-01-12 12:06:14 +0100
+Processing by ArtTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hML2YUvwJzR5i+bn59iGTdI+nySnW4rdxC0T9ECVzA4HtSND5lKajYA8hyWI+2BfY81Q0THW3VASSVAYjxHqyA==", "art_type"=>{"title"=>"ezfeafea", "date"=>"aertaertz", "author"=>"aeterer", "interpreter"=>"artertze", "dimention"=>"aretertar", "link"=>"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1024px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg", "emotion_id"=>"6"}, "commit"=>"Create Art type"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[36mEmotion Load (0.7ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[36mArtType Create (2.6ms)[0m  [1m[32mINSERT INTO "art_types" ("title", "date", "author", "interpreter", "dimention", "created_at", "updated_at", "emotion_id", "link") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "ezfeafea"], ["date", "aertaertz"], ["author", "aeterer"], ["interpreter", "artertze"], ["dimention", "aretertar"], ["created_at", "2020-01-12 11:06:14.233046"], ["updated_at", "2020-01-12 11:06:14.233046"], ["emotion_id", 6], ["link", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1024px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"]]
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/art_types_controller.rb:30
+Redirected to http://localhost:3000/art_types/4
+Completed 302 Found in 11ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/art_types/4" for ::1 at 2020-01-12 12:06:14 +0100
+Processing by ArtTypesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArtType Load (0.8ms)[0m  [1m[34mSELECT  "art_types".* FROM "art_types" WHERE "art_types"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:67
+  Rendering art_types/show.html.erb within layouts/application
+  Rendered art_types/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 137ms (Views: 127.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-12 12:06:16 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (2.4ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:19
+  Rendered art_types/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 268ms (Views: 263.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-12 12:07:51 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (0.5ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:19
+  Rendered art_types/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 208ms (Views: 206.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-12 12:07:56 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (0.4ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 111ms (Views: 109.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-12 12:08:00 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  [1m[36mArtType Load (0.3ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 6]]
+  ↳ app/views/emotions/show.html.erb:27
+  Rendered emotions/show.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 148ms (Views: 145.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-12 12:08:04 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  [1m[36mArtType Load (0.2ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 6]]
+  ↳ app/views/emotions/show.html.erb:27
+  Rendered emotions/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 99ms (Views: 96.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/emotions/6" for ::1 at 2020-01-12 12:09:11 +0100
+Processing by EmotionsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/emotions_controller.rb:67
+  Rendering emotions/show.html.erb within layouts/application
+  [1m[36mArtType Load (0.3ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types" WHERE "art_types"."emotion_id" = $1[0m  [["emotion_id", 6]]
+  ↳ app/views/emotions/show.html.erb:28
+  Rendered emotions/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 130ms (Views: 127.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/art_types/new" for ::1 at 2020-01-12 12:09:24 +0100
+Processing by ArtTypesController#new as HTML
+  Rendering art_types/new.html.erb within layouts/application
+  [1m[36mEmotion Load (0.7ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/art_types/_form.html.erb:8
+  Rendered art_types/_form.html.erb (52.6ms)
+  Rendered art_types/new.html.erb within layouts/application (59.8ms)
+Completed 200 OK in 344ms (Views: 340.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/art_types" for ::1 at 2020-01-12 12:09:58 +0100
+Processing by ArtTypesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MK4n+07bxGAntcScuH+deTPaB3X7ATODMszhPJzyLh6z2fLZ43l52d4CpV7XXHtrginIgG2MZA7kqKLQU3YI2A==", "art_type"=>{"title"=>"wgqdfgqd", "date"=>"qdfgdf", "author"=>"qdfgqdf", "interpreter"=>"qfgdfg", "dimention"=>"qgqdfg", "link"=>"data:image/jpeg;base64,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", "emotion_id"=>"6"}, "commit"=>"Create Art type"}
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[36mEmotion Load (0.2ms)[0m  [1m[34mSELECT  "emotions".* FROM "emotions" WHERE "emotions"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[36mArtType Create (1.5ms)[0m  [1m[32mINSERT INTO "art_types" ("title", "date", "author", "interpreter", "dimention", "created_at", "updated_at", "emotion_id", "link") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "wgqdfgqd"], ["date", "qdfgdf"], ["author", "qdfgqdf"], ["interpreter", "qfgdfg"], ["dimention", "qgqdfg"], ["created_at", "2020-01-12 11:09:58.742626"], ["updated_at", "2020-01-12 11:09:58.742626"], ["emotion_id", 6], ["link", "data:image/jpeg;base64,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"]]
+  ↳ app/controllers/art_types_controller.rb:30
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/art_types_controller.rb:30
+Redirected to http://localhost:3000/art_types/5
+Completed 302 Found in 14ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/art_types/5" for ::1 at 2020-01-12 12:09:58 +0100
+Processing by ArtTypesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArtType Load (0.2ms)[0m  [1m[34mSELECT  "art_types".* FROM "art_types" WHERE "art_types"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/art_types_controller.rb:67
+  Rendering art_types/show.html.erb within layouts/application
+  Rendered art_types/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 111ms (Views: 106.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/art_types" for ::1 at 2020-01-12 12:10:02 +0100
+Processing by ArtTypesController#index as HTML
+  Rendering art_types/index.html.erb within layouts/application
+  [1m[36mArtType Load (5.9ms)[0m  [1m[34mSELECT "art_types".* FROM "art_types"[0m
+  ↳ app/views/art_types/index.html.erb:19
+  Rendered art_types/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 141ms (Views: 134.6ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/emotions" for ::1 at 2020-01-12 12:10:16 +0100
+Processing by EmotionsController#index as HTML
+  Rendering emotions/index.html.erb within layouts/application
+  [1m[36mEmotion Load (8.7ms)[0m  [1m[34mSELECT "emotions".* FROM "emotions"[0m
+  ↳ app/views/emotions/index.html.erb:19
+  Rendered emotions/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 125ms (Views: 115.6ms | ActiveRecord: 8.7ms)
+
+

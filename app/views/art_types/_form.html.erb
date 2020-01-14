@@ -1,0 +1,11 @@
+<%= simple_form_for @art_type do |f| %>
+  <%= f.input :title %>
+  <%= f.input :date %>
+  <%= f.input :author %>
+  <%= f.input :interpreter %>
+  <%= f.input :dimention %>
+  <%= f.input :link %>
+  <%= f.association :emotion %>
+  <%= f.button :submit %>
+
+<% end %>

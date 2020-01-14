@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @art_type.title %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @art_type.date %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @art_type.author %>
+</p>
+
+<p>
+  <strong>Interpreter:</strong>
+  <%= @art_type.interpreter %>
+</p>
+
+<p>
+  <strong>Dimention:</strong>
+  <%= @art_type.dimention %>
+</p>
+
+<%= link_to 'Edit', edit_art_type_path(@art_type) %> |
+<%= link_to 'Back', art_types_path %>
